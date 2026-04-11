@@ -24,8 +24,6 @@ export const SECTIONS = [
   { label: 'Schools', value: 'schools', href: '/section/schools' },
   { label: 'Events', value: 'events', href: '/events' },
   { label: 'History', value: 'history', href: '/section/history' },
-  { label: 'Opinion', value: 'opinion', href: '/opinion' },
-  { label: 'Obituaries', value: 'obituaries', href: '/obituaries' },
 ] as const
 
 export const STATUS_LABELS: Record<string, string> = {
