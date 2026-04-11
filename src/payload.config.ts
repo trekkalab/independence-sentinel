@@ -7,7 +7,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
-const isProduction = process.env.NODE_ENV === 'production'
+const usePostgres = process.env.DATABASE_URI?.startsWith('postgres')
 
 import { Users } from './payload/collections/Users'
 import { Media } from './payload/collections/Media'
@@ -49,7 +49,7 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: isProduction
+  db: usePostgres
     ? postgresAdapter({
         pool: {
           connectionString: process.env.DATABASE_URI!,
