@@ -5,7 +5,7 @@ export const DirectoryListings: CollectionConfig = {
   slug: 'directory-listings',
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'category', 'featuredSponsor', 'active'],
+    defaultColumns: ['name', 'category', 'tier', 'active'],
   },
   access: {
     create: isEditorOrAbove,
@@ -39,6 +39,21 @@ export const DirectoryListings: CollectionConfig = {
       ],
     },
     {
+      name: 'tier',
+      type: 'select',
+      required: true,
+      defaultValue: 'free',
+      options: [
+        { label: 'Free Listing', value: 'free' },
+        { label: 'Enhanced Listing', value: 'enhanced' },
+        { label: 'Sponsor', value: 'sponsor' },
+      ],
+      admin: {
+        position: 'sidebar',
+        description: 'Free: name + category + phone. Enhanced: adds description, website, hours. Sponsor: adds logo, featured placement, and link.',
+      },
+    },
+    {
       name: 'address',
       type: 'text',
     },
@@ -49,15 +64,38 @@ export const DirectoryListings: CollectionConfig = {
     {
       name: 'website',
       type: 'text',
+      admin: {
+        description: 'Available for Enhanced and Sponsor tiers.',
+      },
     },
     {
       name: 'description',
       type: 'textarea',
+      admin: {
+        description: 'Available for Enhanced and Sponsor tiers.',
+      },
+    },
+    {
+      name: 'hours',
+      type: 'textarea',
+      admin: {
+        description: 'Business hours. Available for Enhanced and Sponsor tiers.',
+      },
     },
     {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
+      admin: {
+        description: 'Logo or photo. Available for Sponsor tier.',
+      },
+    },
+    {
+      name: 'tagline',
+      type: 'text',
+      admin: {
+        description: 'Short tagline or slogan. Sponsor tier only.',
+      },
     },
     {
       name: 'featuredSponsor',
@@ -65,7 +103,23 @@ export const DirectoryListings: CollectionConfig = {
       defaultValue: false,
       admin: {
         position: 'sidebar',
-        description: 'Highlight as a paid featured listing.',
+        description: 'Pin to top of directory and homepage.',
+      },
+    },
+    {
+      name: 'sponsorStartDate',
+      type: 'date',
+      admin: {
+        position: 'sidebar',
+        description: 'When the paid listing begins.',
+      },
+    },
+    {
+      name: 'sponsorEndDate',
+      type: 'date',
+      admin: {
+        position: 'sidebar',
+        description: 'When the paid listing expires.',
       },
     },
     {
