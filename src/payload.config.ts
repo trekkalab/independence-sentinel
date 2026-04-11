@@ -1,10 +1,13 @@
 import { buildConfig } from 'payload'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 import { Users } from './payload/collections/Users'
 import { Media } from './payload/collections/Media'
@@ -46,11 +49,17 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || 'file:./independence-sentinel.db',
-    },
-  }),
+  db: isProduction
+    ? postgresAdapter({
+        pool: {
+          connectionString: process.env.DATABASE_URI!,
+        },
+      })
+    : sqliteAdapter({
+        client: {
+          url: process.env.DATABASE_URI || 'file:./independence-sentinel.db',
+        },
+      }),
   sharp,
   plugins: [
     seoPlugin({

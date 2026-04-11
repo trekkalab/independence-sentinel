@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.82.1",
     "@payloadcms/db-sqlite": "^3.82.1",
     "@payloadcms/next": "^3.82.1",
     "@payloadcms/plugin-seo": "^3.82.1",
