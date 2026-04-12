@@ -42,15 +42,15 @@ export const DirectoryListings: CollectionConfig = {
       name: 'tier',
       type: 'select',
       required: true,
-      defaultValue: 'free',
+      defaultValue: 'verified',
       options: [
-        { label: 'Free Listing', value: 'free' },
-        { label: 'Enhanced Listing', value: 'enhanced' },
-        { label: 'Sponsor', value: 'sponsor' },
+        { label: 'Verified ($7/mo)', value: 'verified' },
+        { label: 'Enhanced ($27/mo)', value: 'enhanced' },
+        { label: 'Sponsor ($77/mo)', value: 'sponsor' },
       ],
       admin: {
         position: 'sidebar',
-        description: 'Free: name + category + phone. Enhanced: adds description, website, hours. Sponsor: adds logo, featured placement, and link.',
+        description: 'All listings require card on file. Verified: basic info. Enhanced: adds description, website, hours, photo. Sponsor: adds logo, featured placement, tagline, homepage.',
       },
     },
     {

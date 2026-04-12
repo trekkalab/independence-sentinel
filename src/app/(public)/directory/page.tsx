@@ -28,19 +28,18 @@ export default async function DirectoryPage() {
   const result = await getDirectoryListings()
   const allListings = result.docs as any[]
 
-  // Sort: sponsors first, then enhanced, then free
-  const tierOrder = { sponsor: 0, enhanced: 1, free: 2 }
+  // Sort: sponsors first, then standard
+  const tierOrder = { sponsor: 0, standard: 1 }
   const listings = [...allListings].sort((a, b) => {
-    const aOrder = tierOrder[a.tier as keyof typeof tierOrder] ?? 2
-    const bOrder = tierOrder[b.tier as keyof typeof tierOrder] ?? 2
+    const aOrder = tierOrder[a.tier as keyof typeof tierOrder] ?? 1
+    const bOrder = tierOrder[b.tier as keyof typeof tierOrder] ?? 1
     if (a.featuredSponsor && !b.featuredSponsor) return -1
     if (!a.featuredSponsor && b.featuredSponsor) return 1
     return aOrder - bOrder
   })
 
   const sponsors = listings.filter((l) => l.tier === 'sponsor')
-  const enhanced = listings.filter((l) => l.tier === 'enhanced')
-  const free = listings.filter((l) => l.tier === 'free')
+  const standard = listings.filter((l) => l.tier !== 'sponsor')
 
   return (
     <div className="bg-[#fffdf8]">
@@ -56,45 +55,55 @@ export default async function DirectoryPage() {
         </div>
         <p className="max-w-3xl text-sm leading-7 text-stone-700">
           Support local. The Independence Sentinel Business Directory connects residents with
-          the businesses, services, and organizations that make our community work. Every
-          Independence business can list for free. Upgrade to a sponsored listing for premium
-          placement, your logo, and a direct link.
+          the businesses, services, and organizations that make our community work.
+          Every listing is verified &mdash; a card on file confirms your business is real and active,
+          and keeps the directory free of spam.
         </p>
       </div>
 
-      {/* Sponsor upgrade CTA */}
+      {/* Pricing tiers */}
       <div className="border-b border-stone-300 bg-[#f4ecdd] p-6">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="border border-stone-300 bg-[#fffdf8] p-5">
-            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500">Free Listing</div>
-            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$0</div>
+            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500">Verified Listing</div>
+            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$7<span className="text-sm font-normal text-stone-500">/mo</span></div>
             <ul className="mt-3 space-y-2 text-sm text-stone-700">
-              <li>Business name</li>
-              <li>Category</li>
+              <li>Verified active business</li>
+              <li>Business name &amp; category</li>
               <li>Phone number</li>
               <li>Address</li>
             </ul>
+            <div className="mt-4 border-t border-stone-200 pt-3 text-[11px] text-stone-500">
+              Card on file &bull; Monthly verification audit
+            </div>
           </div>
           <div className="border border-stone-300 bg-[#fffdf8] p-5">
             <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7a5a1f]">Enhanced Listing</div>
-            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$25<span className="text-sm font-normal text-stone-500">/mo</span></div>
+            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$27<span className="text-sm font-normal text-stone-500">/mo</span></div>
             <ul className="mt-3 space-y-2 text-sm text-stone-700">
-              <li>Everything in Free</li>
+              <li>Everything in Verified</li>
               <li>Business description</li>
               <li>Website link</li>
               <li>Business hours</li>
+              <li>Photo</li>
             </ul>
+            <div className="mt-4 border-t border-stone-200 pt-3 text-[11px] text-stone-500">
+              Full profile for engaged businesses
+            </div>
           </div>
           <div className="border-2 border-[#8b6b2e] bg-[#efe2bf] p-5">
             <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#5f4718]">Sponsor</div>
-            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$75<span className="text-sm font-normal text-stone-500">/mo</span></div>
+            <div className="mt-2 font-serif text-2xl font-bold text-[#1f1a14]">$77<span className="text-sm font-normal text-stone-500">/mo</span></div>
             <ul className="mt-3 space-y-2 text-sm text-[#4b3710]">
               <li>Everything in Enhanced</li>
-              <li>Logo / photo displayed</li>
+              <li>Logo displayed</li>
               <li>Featured placement at top</li>
               <li>Custom tagline</li>
               <li>Homepage visibility</li>
             </ul>
+            <div className="mt-4 border-t border-[#c9a84e] pt-3 text-[11px] text-[#5f4718]">
+              Premium visibility across the site
+            </div>
           </div>
         </div>
         <div className="mt-4 text-center">
@@ -163,27 +172,18 @@ export default async function DirectoryPage() {
         </div>
       )}
 
-      {/* Enhanced + Free Listings */}
+      {/* Standard Listings */}
       <div className="p-6">
         <div className="mb-4 text-[11px] font-bold uppercase tracking-[0.24em] text-stone-500">
-          All Businesses
+          All Verified Businesses
         </div>
-        {[...enhanced, ...free].length > 0 ? (
+        {standard.length > 0 ? (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[...enhanced, ...free].map((listing) => (
+            {standard.map((listing) => (
               <article
                 key={listing.id}
-                className={`border p-5 ${
-                  listing.tier === 'enhanced'
-                    ? 'border-[#8b6b2e] bg-[#faf6ee]'
-                    : 'border-stone-300 bg-[#faf6ee]'
-                }`}
+                className="border border-stone-300 bg-[#faf6ee] p-5"
               >
-                {listing.tier === 'enhanced' && (
-                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7a5a1f]">
-                    Enhanced
-                  </div>
-                )}
                 <h3 className="font-serif text-lg font-bold text-[#1f1a14]">
                   {listing.name}
                 </h3>
@@ -196,36 +196,32 @@ export default async function DirectoryPage() {
                 {listing.phone && (
                   <div className="text-sm text-stone-600">{listing.phone}</div>
                 )}
-                {(listing.tier === 'enhanced' || listing.tier === 'sponsor') && (
-                  <>
-                    {listing.description && (
-                      <p className="mt-2 text-sm leading-6 text-stone-700">{listing.description}</p>
-                    )}
-                    {listing.hours && (
-                      <div className="mt-2 text-sm text-stone-600">
-                        <span className="font-semibold">Hours:</span> {listing.hours}
-                      </div>
-                    )}
-                    {listing.website && (
-                      <a
-                        href={listing.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-2 block text-sm text-[#8b6b2e] hover:underline"
-                      >
-                        Visit Website
-                      </a>
-                    )}
-                  </>
+                {listing.description && (
+                  <p className="mt-2 text-sm leading-6 text-stone-700">{listing.description}</p>
+                )}
+                {listing.hours && (
+                  <div className="mt-2 text-sm text-stone-600">
+                    <span className="font-semibold">Hours:</span> {listing.hours}
+                  </div>
+                )}
+                {listing.website && (
+                  <a
+                    href={listing.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 block text-sm text-[#8b6b2e] hover:underline"
+                  >
+                    Visit Website
+                  </a>
                 )}
               </article>
             ))}
           </div>
         ) : (
           <div className="py-12 text-center">
-            <p className="text-stone-500">No businesses listed yet. Be the first.</p>
+            <p className="text-stone-500">No businesses listed yet.</p>
             <div className="mt-4 inline-block bg-[#1c1a17] px-4 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#f7f1e6]">
-              List Your Business Free
+              List Your Business
             </div>
           </div>
         )}
