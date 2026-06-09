@@ -1,0 +1,427 @@
+{
+  "communities": {
+    "0": [
+      "ai_review_route",
+      "ai_review_route_extractchildren",
+      "ai_review_route_extracttextfromrichtext",
+      "ai_review_route_post",
+      "events_page",
+      "events_page_eventspage",
+      "events_page_metadata",
+      "lib_payload",
+      "lib_payload_getpayloadclient",
+      "lib_queries",
+      "lib_queries_getactiveadplacements",
+      "lib_queries_getarticlesbyauthor",
+      "lib_queries_getarticlesforteacherreview",
+      "lib_queries_geteditorialqueue",
+      "lib_queries_getfeaturedarticles",
+      "lib_queries_getpublicnotices",
+      "lib_queries_getpublishedarticles",
+      "lib_queries_getrecentobituaries",
+      "lib_queries_getupcomingevents",
+      "lib_utils_formatdate",
+      "newsletter_route",
+      "newsletter_route_post",
+      "notices_page",
+      "notices_page_metadata",
+      "notices_page_noticespage",
+      "obituaries_page",
+      "obituaries_page_metadata",
+      "obituaries_page_obituariespage",
+      "opinion_page",
+      "opinion_page_metadata",
+      "opinion_page_opinionpage",
+      "public_newsletterblock",
+      "public_newsletterblock_newsletterblock",
+      "public_page",
+      "public_page_homepage",
+      "public_page_metadata",
+      "public_storycard",
+      "public_storycard_storycard",
+      "search_route",
+      "search_route_get",
+      "section_page",
+      "section_page_generatemetadata",
+      "section_page_props",
+      "section_page_sectionpage"
+    ],
+    "1": [
+      "access_roles",
+      "access_roles_canreadownoreditorial",
+      "access_roles_isadmin",
+      "access_roles_isadminfieldaccess",
+      "access_roles_isadminorself",
+      "access_roles_iseditororabove",
+      "access_roles_isloggedin",
+      "access_roles_ispublished",
+      "access_roles_ispublishedoreditororabove",
+      "access_roles_isreporterorabove",
+      "access_roles_isstudentjournalist",
+      "access_roles_isteacher",
+      "access_roles_role",
+      "collections_adplacements",
+      "collections_adplacements_adplacements",
+      "collections_advertisers",
+      "collections_advertisers_advertisers",
+      "collections_articles",
+      "collections_articles_articles",
+      "collections_directorylistings",
+      "collections_directorylistings_directorylistings",
+      "collections_events",
+      "collections_events_events",
+      "collections_media",
+      "collections_media_media",
+      "collections_newslettersubscribers",
+      "collections_newslettersubscribers_newslettersubscribers",
+      "collections_obituaries",
+      "collections_obituaries_obituaries",
+      "collections_publicnotices",
+      "collections_publicnotices_publicnotices",
+      "collections_schools",
+      "collections_schools_schools",
+      "collections_users",
+      "collections_users_users",
+      "fields_slug",
+      "fields_slug_slugfield",
+      "src_payload_config",
+      "src_payload_config_dirname",
+      "src_payload_config_filename"
+    ],
+    "2": [
+      "ads_page",
+      "ads_page_adspage",
+      "ads_page_inventoryslots",
+      "ads_page_metadata",
+      "drafts_page",
+      "drafts_page_draftspage",
+      "drafts_page_metadata",
+      "id_page",
+      "id_page_editorialreviewpage",
+      "lib_queries_getadrevenuesummary",
+      "lib_utils",
+      "lib_utils_cn",
+      "lib_utils_status_labels",
+      "lib_utils_status_tones",
+      "lib_utils_timeago",
+      "portal_page",
+      "portal_page_metadata",
+      "portal_page_portalnav",
+      "portal_page_portalpage",
+      "queue_page",
+      "queue_page_editorialqueuepage",
+      "queue_page_metadata",
+      "submissions_page",
+      "submissions_page_metadata",
+      "submissions_page_submissionspage",
+      "submit_page",
+      "submit_page_sections",
+      "submit_page_submitstorypage",
+      "teacher_page",
+      "teacher_page_metadata",
+      "teacher_page_teacherpage",
+      "ui_metric",
+      "ui_metric_metric",
+      "ui_panel",
+      "ui_panel_panel",
+      "ui_tag",
+      "ui_tag_tag",
+      "ui_tag_tones"
+    ],
+    "3": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_bcryptjs",
+      "package_dependencies_date_fns",
+      "package_dependencies_lucide_react",
+      "package_dependencies_next",
+      "package_dependencies_payload",
+      "package_dependencies_payloadcms_db_postgres",
+      "package_dependencies_payloadcms_db_sqlite",
+      "package_dependencies_payloadcms_next",
+      "package_dependencies_payloadcms_plugin_seo",
+      "package_dependencies_payloadcms_richtext_lexical",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_sharp",
+      "package_dependencies_slugify",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version"
+    ],
+    "4": [
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_exclude",
+      "tsconfig_include",
+      "tsconfig_paths",
+      "tsconfig_paths_payload_config"
+    ],
+    "5": [
+      "admin_importmap",
+      "admin_importmap_importmap",
+      "payload_layout",
+      "payload_layout_args",
+      "payload_layout_layout",
+      "payload_layout_metadata",
+      "payload_layout_serverfunction",
+      "segments_page",
+      "segments_page_args",
+      "segments_page_generatemetadata",
+      "segments_page_page"
+    ],
+    "6": [
+      "eslint_config",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_ssh2",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_bcryptjs",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript"
+    ],
+    "7": [
+      "lib_queries_getarticlebyslug",
+      "lib_utils_formatdatetime",
+      "public_adslot",
+      "public_adslot_adslot",
+      "slug_page",
+      "slug_page_articlepage",
+      "slug_page_generatemetadata",
+      "slug_page_props",
+      "slug_page_richtextnode",
+      "slug_page_richtextrenderer"
+    ],
+    "8": [
+      "agents_nextjs_agent_rules",
+      "claude_project_instructions",
+      "create_next_app_tool",
+      "geist_font_family",
+      "next_svg_logo",
+      "nextjs_framework",
+      "readme_project_overview",
+      "vercel_platform",
+      "vercel_svg_logo"
+    ],
+    "9": [
+      "c_users_travi_beacon_point_trekka_seo_marketing_assistant_trekka_clients_independence_sentinel_news_independence_sentinel_deploy_sh__entry",
+      "deploy",
+      "deploy_build_app",
+      "deploy_setup_env",
+      "deploy_setup_postgres",
+      "deploy_setup_repo",
+      "deploy_show_nginx_config",
+      "deploy_start_app"
+    ],
+    "10": [
+      "lib_utils_sections",
+      "public_footer",
+      "public_footer_footer",
+      "public_footer_footerlinks",
+      "public_layout",
+      "public_layout_publiclayout",
+      "public_masthead",
+      "public_masthead_masthead"
+    ],
+    "11": [
+      "slug_route",
+      "slug_route_delete",
+      "slug_route_get",
+      "slug_route_options",
+      "slug_route_patch",
+      "slug_route_post",
+      "slug_route_put"
+    ],
+    "12": [
+      "directory_page",
+      "directory_page_category_labels",
+      "directory_page_directorypage",
+      "directory_page_metadata",
+      "lib_queries_getdirectorylistings"
+    ],
+    "13": [
+      "app_layout",
+      "app_layout_geistsans",
+      "app_layout_metadata",
+      "app_layout_rootlayout"
+    ],
+    "14": [
+      "admin_layout",
+      "admin_layout_adminlayout",
+      "admin_layout_adminnav"
+    ],
+    "15": [
+      "file_svg_icon",
+      "globe_svg_icon",
+      "window_svg_icon"
+    ],
+    "16": [
+      "postcss_config",
+      "postcss_config_config"
+    ],
+    "17": [
+      "ui_sectionheader",
+      "ui_sectionheader_sectionheader"
+    ],
+    "18": [
+      "next_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.09408033826638477,
+    "1": 0.10384615384615385,
+    "2": 0.09246088193456614,
+    "3": 0.08333333333333333,
+    "4": 0.09523809523809523,
+    "5": 0.21818181818181817,
+    "6": 0.18181818181818182,
+    "7": 0.28888888888888886,
+    "8": 0.25,
+    "9": 0.4642857142857143,
+    "10": 0.32142857142857145,
+    "11": 0.2857142857142857,
+    "12": 0.5,
+    "13": 0.5,
+    "14": 0.6666666666666666,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0
+  },
+  "gods": [
+    {
+      "id": "lib_payload_getpayloadclient",
+      "label": "getPayloadClient()",
+      "degree": 20
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "ui_panel_panel",
+      "label": "Panel()",
+      "degree": 10
+    },
+    {
+      "id": "access_roles_iseditororabove",
+      "label": "isEditorOrAbove()",
+      "degree": 10
+    },
+    {
+      "id": "ui_tag_tag",
+      "label": "Tag()",
+      "degree": 9
+    },
+    {
+      "id": "lib_queries_getpublishedarticles",
+      "label": "getPublishedArticles()",
+      "degree": 8
+    },
+    {
+      "id": "lib_queries_getactiveadplacements",
+      "label": "getActiveAdPlacements()",
+      "degree": 8
+    },
+    {
+      "id": "c_users_travi_beacon_point_trekka_seo_marketing_assistant_trekka_clients_independence_sentinel_news_independence_sentinel_deploy_sh__entry",
+      "label": "deploy.sh script",
+      "degree": 7
+    },
+    {
+      "id": "public_page_homepage",
+      "label": "HomePage()",
+      "degree": 6
+    },
+    {
+      "id": "lib_queries_getupcomingevents",
+      "label": "getUpcomingEvents()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Next.js Logo SVG",
+      "target": "Next.js Framework",
+      "source_files": [
+        "public/next.svg",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (image \u2194 doc); connects across different repos/directories"
+    },
+    {
+      "source": "Vercel Logo SVG",
+      "target": "Vercel Deployment Platform",
+      "source_files": [
+        "public/vercel.svg",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (image \u2194 doc); connects across different repos/directories"
+    },
+    {
+      "source": "Next.js Agent Rules",
+      "target": "Next.js Framework",
+      "source_files": [
+        "AGENTS.md",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Claude Project Instructions",
+      "target": "Next.js Agent Rules",
+      "source_files": [
+        "CLAUDE.md",
+        "AGENTS.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "File Icon SVG",
+      "target": "Globe Icon SVG",
+      "source_files": [
+        "public/file.svg",
+        "public/globe.svg"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
+    }
+  ],
+  "tokens": {
+    "input": 42023,
+    "output": 2032
+  }
+}
