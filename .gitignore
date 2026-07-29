@@ -46,3 +46,6 @@ next-env.d.ts
 
 # media uploads
 /public/media
+
+# graphify knowledge graph — regenerated build artifact, do not track
+graphify-out/
